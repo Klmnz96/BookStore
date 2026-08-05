@@ -11,7 +11,71 @@
     <link rel="stylesheet" href="./fonts.css">
 </head>
 <body>
+    <header class="site-header">
+        <img class="logo" src="./assets/img/logo.png" alt="Logo">
+        <h1 class="site-title"><span class="accent">KF</span>Bookstore</h1>
+        <p class="tagline">explore.read.repeat</p>
+    </header>
     
+    <main class="book-grid" id="book-grid">
+        <!-- Diese Karte wird pro Buch per JS geklont/gefüllt -->
+        <article class="book-card">
+
+
+            <div class="book-card-section">
+                <h2 class="book-title"></h2>
+            </div>
+
+            <div class="book-card-section book-card-cover">
+                <img src="./assets/img/book-img.png" alt="Book Image">
+            </div>
+
+
+            <div class="book-card-section book-card-meta">
+                <div class="price-row">
+                    <span class="price"></span>
+                    <span class="likes">
+                        <span class="likes-count"></span>
+                        <span class="heart-icon">♥</span>
+                    </span>
+                </div>
+
+                <dl class="book-details">
+                    <div class="detail-row">
+                        <dt>Author</dt>
+                        <dd class="author"></dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Erscheinungsjahr</dt>
+                        <dd class="published-year"></dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Genre</dt>
+                        <dd class="genre"></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="book-card-section book-card-comments">
+                <h3>Kommentare:</h3>
+                <ul class="comment-list">
+                    <!--pro Kommentar per JS: -->
+                    <li class="comment-item">
+                        <span class="comment-author"></span>
+                        <span class="comment-text"></span>
+                    </li>
+                </ul>
+
+                <form class="comment-form">
+                    <input type="text" class="comment-input" placeholder="Schreibe dein Kommentar ...">
+                    <button type="submit" class="comment-submit" aria-label="Kommentar senden">&#10148;</button>
+                </form>
+            </div>
+
+
+        </article>
+        <!-- weitere .book-card Elemente hier per JS anhängen -->
+    </main>
 
 
 
