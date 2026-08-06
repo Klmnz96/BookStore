@@ -2,8 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   scroll-behavior: smooth;
-  background-color: rgba(46, 26, 71, 1);
+  background-color: rgb(36, 3, 48);
   font-family: "Karla";
+  color: rgb(187, 197, 206);
 }
 
 a {
