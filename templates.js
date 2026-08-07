@@ -1,4 +1,13 @@
-function getBookCardTemplate(book) {
+function getBookCardTemplate(book, index) {
+  let heartSymbol = "♡";
+  if (book.liked) {
+    heartSymbol = "♥";
+  }
+
+  let commentsHTML = "";
+  for (let i = 0; i < book.comments.length; i++) {
+    commentsHTML += getCommentTemplate(book.comments[i]);
+  }
   return `<article class="book-card">
     <div class="book-card-section">
     <h2 class="book-title">${book.name}</h2>
@@ -11,10 +20,10 @@ function getBookCardTemplate(book) {
     
     <div class="book-card-section book-card-meta">
     <div class="price-row">
-    <span class="price">${book.price}</span>
+    <span class="price">${book.price.toFixed(2)} €</span>
     <span class="likes">
     <span class="likes-count">${book.likes}</span>
-    <span class="heart-icon">♡</span>
+    <span class="heart-icon" onclick="toggleLike(${index})">${heartSymbol}</span>
     </span>
     </div>
     
@@ -38,11 +47,7 @@ function getBookCardTemplate(book) {
     <div class="book-card-section book-card-comments">
     <h3>Kommentare:</h3>
     <ul class="comment-list">
-    
-    <li class="comment-item">
-    <span class="comment-author">${book.comments[0].name}</span>:
-    <span class="comment-text">${book.comments[0].comment}</span>
-    </li>
+      ${commentsHTML}
     </ul>
     
     <form class="comment-form">
@@ -51,4 +56,11 @@ function getBookCardTemplate(book) {
     </form>
     </div>
     </article>`;
+}
+
+function getCommentTemplate(comment) {
+  return `<li class="comment-item">
+    <span class="comment-author">${comment.name}</span>:
+    <span class="comment-text">${comment.comment}</span>
+    </li>`;
 }

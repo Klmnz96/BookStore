@@ -57,10 +57,10 @@ header p {
   margin-top: 80px;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  background-color: rgba(46, 26, 71, 1);
-  margin-left: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-radius: 20px;
 }
 
@@ -68,7 +68,12 @@ header p {
   margin-top: 20px;
   height: 150px;
   width: 150px;
-  background-color: rgba(46, 26, 71, 1);
+  border-radius: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(70, 40, 100, 0.1) 0%,
+    transparent 100%
+  );
 }
 .book-card-section:first-child {
   border-radius: 20px 20px 0 0;
@@ -112,7 +117,11 @@ header p {
 .book-card-cover {
   display: flex;
   justify-content: center;
-  background-color: rgba(46, 26, 71, 1);
+  background: radial-gradient(
+    circle,
+    rgba(70, 40, 100, 1) 0%,
+    transparent 100%
+  );
 }
 
 .price-row {
@@ -147,6 +156,7 @@ header p {
   margin-right: 20px;
   color: rgb(13, 245, 254);
   background-color: rgba(46, 26, 71, 1);
+  cursor: pointer;
 }
 
 .book-details {
@@ -155,10 +165,18 @@ header p {
   justify-content: flex-start;
   margin-left: 20px;
   gap: 8px;
+  padding-bottom: 20px;
 }
 
 .detail-row dd::before {
   content: ": ";
+}
+
+.detail-row dt {
+  width: 140px;
+  flex-shrink: 0;
+  color: rgb(13, 245, 254);
+  font-weight: 600;
 }
 
 .detail-row dt,
@@ -168,8 +186,7 @@ dd {
 
 .detail-row {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  gap: 8px;
   background-color: rgba(46, 26, 71, 1);
 }
 
@@ -242,20 +259,30 @@ footer p {
   --sb-thumb-color: #aa67c0;
   --sb-size: 10px;
   background-color: rgba(46, 26, 71, 1);
-  max-height: 200px;
+  max-height: 100px;
   overflow-y: auto;
 }
 
 .comment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 16px;
   background-color: rgba(46, 26, 71, 1);
 }
 
 .comment-author {
+  flex-shrink: 0;
+  width: 100px;
   background-color: rgba(46, 26, 71, 1);
+  font-weight: 700;
+  color: rgb(13, 245, 254);
 }
 
 .comment-text {
+  flex: 1;
   background-color: rgba(46, 26, 71, 1);
+  margin-left: 10px;
 }
 
 .comment-list::-webkit-scrollbar {
